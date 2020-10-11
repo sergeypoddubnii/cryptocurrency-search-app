@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/cryptocurrency-search-app/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/cryptocurrency-search-app/static/js/main.77197bdb.chunk.js",
-    "main.js.map": "/cryptocurrency-search-app/static/js/main.77197bdb.chunk.js.map",
+    "main.js": "/cryptocurrency-search-app/static/js/main.fd1c176e.chunk.js",
+    "main.js.map": "/cryptocurrency-search-app/static/js/main.fd1c176e.chunk.js.map",
     "runtime-main.js": "/cryptocurrency-search-app/static/js/runtime-main.a5ab1bb0.js",
     "runtime-main.js.map": "/cryptocurrency-search-app/static/js/runtime-main.a5ab1bb0.js.map",
-    "static/css/2.a123c8b4.chunk.css": "/cryptocurrency-search-app/static/css/2.a123c8b4.chunk.css",
-    "static/js/2.cf0ad5fb.chunk.js": "/cryptocurrency-search-app/static/js/2.cf0ad5fb.chunk.js",
-    "static/js/2.cf0ad5fb.chunk.js.map": "/cryptocurrency-search-app/static/js/2.cf0ad5fb.chunk.js.map",
+    "static/css/2.0875c511.chunk.css": "/cryptocurrency-search-app/static/css/2.0875c511.chunk.css",
+    "static/js/2.24bafab4.chunk.js": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js",
+    "static/js/2.24bafab4.chunk.js.map": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js.map",
     "index.html": "/cryptocurrency-search-app/index.html",
-    "precache-manifest.8af2e6103f9bd5a0ae486c7620027dce.js": "/cryptocurrency-search-app/precache-manifest.8af2e6103f9bd5a0ae486c7620027dce.js",
+    "precache-manifest.c1284d64d7ef88b0dbcd81a3f345c119.js": "/cryptocurrency-search-app/precache-manifest.c1284d64d7ef88b0dbcd81a3f345c119.js",
     "service-worker.js": "/cryptocurrency-search-app/service-worker.js",
-    "static/css/2.a123c8b4.chunk.css.map": "/cryptocurrency-search-app/static/css/2.a123c8b4.chunk.css.map",
+    "static/css/2.0875c511.chunk.css.map": "/cryptocurrency-search-app/static/css/2.0875c511.chunk.css.map",
     "static/css/main.d498bfb3.chunk.css.map": "/cryptocurrency-search-app/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.cf0ad5fb.chunk.js.LICENSE.txt": "/cryptocurrency-search-app/static/js/2.cf0ad5fb.chunk.js.LICENSE.txt"
+    "static/js/2.24bafab4.chunk.js.LICENSE.txt": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a5ab1bb0.js",
-    "static/css/2.a123c8b4.chunk.css",
-    "static/js/2.cf0ad5fb.chunk.js",
+    "static/css/2.0875c511.chunk.css",
+    "static/js/2.24bafab4.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.77197bdb.chunk.js"
+    "static/js/main.fd1c176e.chunk.js"
   ]
 }
