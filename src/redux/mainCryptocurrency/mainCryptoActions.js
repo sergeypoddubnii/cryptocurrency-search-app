@@ -1,10 +1,18 @@
 import mainCryptoTypes from './mainCryptoTypes';
 
-const getAllCryptoCurrency = cryptocurrencies => {
+const getAllCryptoCurrencyStart = {
+  type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_START,
+};
+
+const getAllCryptoCurrencySuccess = cryptocurrencies => {
   return {
-    type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY,
+    type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_SUCCESS,
     payload: { cryptocurrencies },
   };
+};
+
+const getAllCryptoCurrencyError = {
+  type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_ERROR,
 };
 
 const findCrypto = value => {
@@ -23,7 +31,9 @@ const sortDescendingPrice = {
 };
 
 export default {
-  getAllCryptoCurrency,
+  getAllCryptoCurrencyStart,
+  getAllCryptoCurrencySuccess,
+  getAllCryptoCurrencyError,
   findCrypto,
   sortAscendingPrice,
   sortDescendingPrice,

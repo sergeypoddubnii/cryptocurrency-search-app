@@ -2,27 +2,32 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import mainCryptoAction from '../../redux/mainCryptocurrency/mainCryptoActions';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Input = styled.input`
   font-size: 18px;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 3px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
   color: #657b9a;
+  outline: none;
   ::placeholder {
     font-size: 16px;
+    color: #fff;
+    opacity: 0.7;
   }
 `;
 
 const Button = styled.button`
   font-size: 18px;
-  background: #c0d6e4;
-  border: 1px solid #000;
-  border-radius: 3px;
+  background: transparent;
+  border: none;
+  color: #fff;
 `;
 
 const Form = styled.form`
-  margin: 10px;
+  margin-right: 40px;
 `;
 
 const SearchForm = () => {
@@ -31,7 +36,7 @@ const SearchForm = () => {
 
   const handlerSubmit = e => {
     e.preventDefault();
-    dispatch(mainCryptoAction.findCrypto(value.toUpperCase()));
+    dispatch(mainCryptoAction.findCrypto(value.toLowerCase().trim()));
     setValue('');
   };
 
@@ -46,9 +51,11 @@ const SearchForm = () => {
         name="search"
         value={value}
         onChange={handlerChange}
-        placeholder="input symbol or name..."
+        placeholder="input name or symbol..."
       />
-      <Button type="submit">search</Button>
+      <Button type="submit" disabled={value.length === 0}>
+        <FontAwesomeIcon icon={faSearch} />
+      </Button>
     </Form>
   );
 };

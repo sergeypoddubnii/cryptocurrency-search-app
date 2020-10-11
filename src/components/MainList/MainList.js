@@ -4,16 +4,16 @@ import mainCryptoOperations from '../../redux/mainCryptocurrency/mainCryptoOpera
 import mainCryptoSelectors from '../../redux/mainCryptocurrency/mainCryptoSelectors';
 import favCryptoSelectors from '../../redux/favCryptocurrency/favCryptoSelectors';
 import MainListItem from '../MainListItem/MainListItem';
-import styled from 'styled-components';
+import withTitleList from '../../hoc/withTitleList';
 
-const Title = styled.h2`
-  font-size: 22px;
-  padding: 0;
-  margin-bottom: 10px;
-`;
+const hocOptions = { title: 'Top cryptorurrencies:' };
 
 const MainList = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(mainCryptoOperations.getAllCryptoCurrenciesOperation());
+  }, [dispatch]);
 
   const allCryptoCurrencies = useSelector(
     mainCryptoSelectors.getAllCryptocurrencies,
@@ -22,10 +22,6 @@ const MainList = () => {
   const favCryptocurrencies = useSelector(
     favCryptoSelectors.getFavCryptocurrencies,
   );
-
-  useEffect(() => {
-    dispatch(mainCryptoOperations.getAllCryptoCurrenciesOperation());
-  }, [dispatch]);
 
   const cryptocurrenciesList = useMemo(() => {
     return (
@@ -49,11 +45,12 @@ const MainList = () => {
   }, [allCryptoCurrencies, favCryptocurrencies]);
 
   return (
-    <div>
-      <Title>Top cryptocurrencies</Title>
-      <ul>{allCryptoCurrencies.length !== 0 ? cryptocurrenciesList : null}</ul>
-    </div>
+    <ul>
+      {allCryptoCurrencies.length !== 0
+        ? cryptocurrenciesList
+        : 'no results...'}
+    </ul>
   );
 };
 
-export default MainList;
+export default withTitleList(hocOptions)(MainList);

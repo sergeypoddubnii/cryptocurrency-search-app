@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const basic = 'https://pro-api.coinmarketcap.com';
 const key = '8a4197ac-656d-49d5-8273-b703b20cf873';
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';

@@ -2,13 +2,9 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import favCryptoSelectors from '../../redux/favCryptocurrency/favCryptoSelectors';
 import FavoriteListItem from '../FavoriteListItem/FavoriteListItem';
-import styled from 'styled-components';
+import withTitleList from '../../hoc/withTitleList';
 
-const Title = styled.h2`
-  font-size: 22px;
-  padding: 0;
-  margin-bottom: 10px;
-`;
+const hocOptions = { title: 'Your favorite cryptoсurrencies:' };
 
 const FavoriteList = () => {
   const favCryptocurrencies = useSelector(
@@ -29,13 +25,7 @@ const FavoriteList = () => {
     });
   }, [favCryptocurrencies]);
 
-  console.log(favCryptocurrencies);
-  return (
-    <div>
-      <Title>Your favorite list</Title>
-      <ul>{cryptocurrenciesList}</ul>
-    </div>
-  );
+  return <ul>{cryptocurrenciesList}</ul>;
 };
 
-export default FavoriteList;
+export default withTitleList(hocOptions)(FavoriteList);

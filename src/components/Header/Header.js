@@ -6,28 +6,45 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   background: transparent;
-  border-radius: 3px;
+  color: #fff;
+  outline: none;
   border: 0;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 40px;
+  border-bottom: 1px solid #fff;
+  :hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+`;
+
+const HeaderContainer = styled.header`
+  display: flex;
+  padding: 20px 50px;
+  background-color: #7b25aa;
 `;
 
 const Header = () => {
   const dispatch = useDispatch();
+
   const handlerSortAscendingPrice = () => {
     dispatch(mainCryptoActions.sortAscendingPrice);
   };
   const handlerSortDescendingPrice = () => {
     dispatch(mainCryptoActions.sortDescendingPrice);
   };
+
   return (
-    <header>
+    <HeaderContainer>
       <Form />
       <Button type="button" onClick={handlerSortAscendingPrice}>
-        sort ascending price
+        sort ascending price &#8593;
       </Button>
       <Button type="button" onClick={handlerSortDescendingPrice}>
-        sort descending price
+        sort descending price &#8595;
       </Button>
-    </header>
+    </HeaderContainer>
   );
 };
 

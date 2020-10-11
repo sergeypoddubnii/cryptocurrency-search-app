@@ -2,14 +2,14 @@ import mainCryptoTypes from './mainCryptoTypes';
 
 const mainCryptoReducer = (state = [], { type, payload }) => {
   switch (type) {
-    case mainCryptoTypes.GET_ALL_CRYPTOCURRENCY:
+    case mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_SUCCESS:
       return payload.cryptocurrencies;
 
     case mainCryptoTypes.FIND_CRYPTOCURRENCY:
       const findedCrypto = state.find(
         crypto =>
-          crypto.name.toUpperCase() === payload.value ||
-          crypto.symbol.toUpperCase() === payload.value,
+          crypto.name.toLowerCase() === payload.value ||
+          crypto.symbol.toLowerCase() === payload.value,
       );
       return findedCrypto ? [findedCrypto] : [];
 
