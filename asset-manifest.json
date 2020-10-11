@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cryptocurrency-search-app/static/css/main.d498bfb3.chunk.css",
+    "main.css": "/cryptocurrency-search-app/static/css/main.29f04a4d.chunk.css",
     "main.js": "/cryptocurrency-search-app/static/js/main.fd1c176e.chunk.js",
     "main.js.map": "/cryptocurrency-search-app/static/js/main.fd1c176e.chunk.js.map",
     "runtime-main.js": "/cryptocurrency-search-app/static/js/runtime-main.a5ab1bb0.js",
@@ -9,17 +9,17 @@
     "static/js/2.24bafab4.chunk.js": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js",
     "static/js/2.24bafab4.chunk.js.map": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js.map",
     "index.html": "/cryptocurrency-search-app/index.html",
-    "precache-manifest.c1284d64d7ef88b0dbcd81a3f345c119.js": "/cryptocurrency-search-app/precache-manifest.c1284d64d7ef88b0dbcd81a3f345c119.js",
+    "precache-manifest.d76f1b35ed10b012e29e6258b26ba038.js": "/cryptocurrency-search-app/precache-manifest.d76f1b35ed10b012e29e6258b26ba038.js",
     "service-worker.js": "/cryptocurrency-search-app/service-worker.js",
     "static/css/2.0875c511.chunk.css.map": "/cryptocurrency-search-app/static/css/2.0875c511.chunk.css.map",
-    "static/css/main.d498bfb3.chunk.css.map": "/cryptocurrency-search-app/static/css/main.d498bfb3.chunk.css.map",
+    "static/css/main.29f04a4d.chunk.css.map": "/cryptocurrency-search-app/static/css/main.29f04a4d.chunk.css.map",
     "static/js/2.24bafab4.chunk.js.LICENSE.txt": "/cryptocurrency-search-app/static/js/2.24bafab4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a5ab1bb0.js",
     "static/css/2.0875c511.chunk.css",
     "static/js/2.24bafab4.chunk.js",
-    "static/css/main.d498bfb3.chunk.css",
+    "static/css/main.29f04a4d.chunk.css",
     "static/js/main.fd1c176e.chunk.js"
   ]
 }

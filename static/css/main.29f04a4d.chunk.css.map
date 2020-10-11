@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,OACE,cACF,CAEA,KACE,8BACF","file":"main.29f04a4d.chunk.css","sourcesContent":["button {\r\n  cursor: pointer;\r\n}\r\n\r\nbody {\r\n  font-family: 'Arial', sans-serif;\r\n}\r\n"]}
