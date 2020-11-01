@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Form from '../Form/Form';
 import mainCryptoActions from '../../redux/mainCryptocurrency/mainCryptoActions';
 import { useDispatch } from 'react-redux';
@@ -25,12 +25,13 @@ const HeaderContainer = styled.header`
   background-color: #7b25aa;
 `;
 
-const Header = () => {
+const Header: FC = () => {
   const dispatch = useDispatch();
 
   const handlerSortAscendingPrice = () => {
     dispatch(mainCryptoActions.sortAscendingPrice);
   };
+
   const handlerSortDescendingPrice = () => {
     dispatch(mainCryptoActions.sortDescendingPrice);
   };

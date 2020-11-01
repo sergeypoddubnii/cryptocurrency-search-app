@@ -19,7 +19,9 @@ const Title = styled.h2`
   margin-right: 10px;
 `;
 
-const withWrapperListItem = Component => props => {
+const withWrapperListItem = <P extends object>(
+  Component: React.ComponentType<P>,
+) => (props: any) => {
   const { name, symbol, price } = props;
 
   return (

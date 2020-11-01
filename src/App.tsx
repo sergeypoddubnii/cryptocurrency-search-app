@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 0 90px;
 `;
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <Header />

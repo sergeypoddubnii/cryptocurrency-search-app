@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import mainCryptoOperations from '../../redux/mainCryptocurrency/mainCryptoOperations';
 import mainCryptoSelectors from '../../redux/mainCryptocurrency/mainCryptoSelectors';
@@ -8,7 +8,14 @@ import withTitleList from '../../hoc/withTitleList';
 
 const hocOptions = { title: 'Top cryptorurrencies:' };
 
-const MainList = () => {
+interface cryptoType {
+  id: string;
+  name: string;
+  symbol: any;
+  price: number;
+}
+
+const MainList: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +33,7 @@ const MainList = () => {
   const cryptocurrenciesList = useMemo(() => {
     return (
       allCryptoCurrencies.length !== 0 &&
-      allCryptoCurrencies.map(crypto => {
+      allCryptoCurrencies.map((crypto: cryptoType) => {
         const isFavorite = !!favCryptocurrencies.find(
           favCrypto => favCrypto.id === crypto.id,
         );

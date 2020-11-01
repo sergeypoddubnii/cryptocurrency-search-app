@@ -3,7 +3,14 @@ import axios from 'axios';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import mainCryptoActions from './mainCryptoActions';
-import mainCryptoTypes from './mainCryptoTypes';
+import {
+  GET_ALL_CRYPTOCURRENCY_ERROR,
+  GET_ALL_CRYPTOCURRENCY_START,
+  GET_ALL_CRYPTOCURRENCY_SUCCESS,
+  FIND_CRYPTOCURRENCY,
+  SORT_ASCENDING_PRICE,
+  SORT_DESCENDING_PRICE,
+} from './mainCryptoTypes';
 import mainCryptoSelectors from './mainCryptoSelectors';
 import mainCryptoReducer from './mainCryptoReducer';
 import mainCryproOperations from './mainCryptoOperations';
@@ -22,7 +29,7 @@ describe('mainCryptocurrency', () => {
   describe('mainCryptoActions', () => {
     it('getAllCryptoCurrencySuccess should create correct action', () => {
       const expectedAction = {
-        type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_SUCCESS,
+        type: GET_ALL_CRYPTOCURRENCY_SUCCESS,
         payload: { cryptocurrencies: 1 },
       };
       expect(mainCryptoActions.getAllCryptoCurrencySuccess(1)).toEqual(
@@ -32,7 +39,7 @@ describe('mainCryptocurrency', () => {
 
     it('findCrypto should create correct action', () => {
       const expectedAction = {
-        type: mainCryptoTypes.FIND_CRYPTOCURRENCY,
+        type: FIND_CRYPTOCURRENCY,
         payload: { value: 1 },
       };
       expect(mainCryptoActions.findCrypto(1)).toEqual(expectedAction);
@@ -53,14 +60,14 @@ describe('mainCryptocurrency', () => {
     ];
     it('GET_ALL_CRYPTOCURRENCY_SUCCESS should return correct state', () => {
       const action = {
-        type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_SUCCESS,
+        type: GET_ALL_CRYPTOCURRENCY_SUCCESS,
         payload: { cryptocurrencies: [1, 2, 3] },
       };
       expect(mainCryptoReducer([], action)).toEqual([1, 2, 3]);
     });
     it('FIND_CRYPTOCURRENCY should return correct state', () => {
       const action = {
-        type: mainCryptoTypes.FIND_CRYPTOCURRENCY,
+        type: FIND_CRYPTOCURRENCY,
         payload: { value: 'hi' },
       };
 
@@ -71,7 +78,7 @@ describe('mainCryptocurrency', () => {
 
     it('SORT_ASCENDING_PRICE should return correct state', () => {
       const action = {
-        type: mainCryptoTypes.SORT_ASCENDING_PRICE,
+        type: SORT_ASCENDING_PRICE,
       };
 
       const expectedState = [
@@ -84,7 +91,7 @@ describe('mainCryptocurrency', () => {
     });
     it('SORT_DESCENDING_PRICE should return correct state', () => {
       const action = {
-        type: mainCryptoTypes.SORT_DESCENDING_PRICE,
+        type: SORT_DESCENDING_PRICE,
       };
 
       const expectedState = [
@@ -105,10 +112,10 @@ describe('mainCryptocurrency', () => {
         .then(() => {
           const expectedActions = [
             {
-              type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_START,
+              type: GET_ALL_CRYPTOCURRENCY_START,
             },
             {
-              type: mainCryptoTypes.GET_ALL_CRYPTOCURRENCY_ERROR,
+              type: GET_ALL_CRYPTOCURRENCY_ERROR,
             },
           ];
           expect(store.getActions()).toEqual(expectedActions);

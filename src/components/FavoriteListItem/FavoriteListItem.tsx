@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import favCryptoActions from '../../redux/favCryptocurrency/favCryptoActions';
 import styled from 'styled-components';
@@ -17,7 +17,11 @@ const Button = styled.button`
   outline: none;
 `;
 
-const FavoriteListItem = ({ id }) => {
+interface FavoriteListItemProps {
+  id: string;
+}
+
+const FavoriteListItem: FC<FavoriteListItemProps> = ({ id }) => {
   const dispatch = useDispatch();
 
   const removeFromFavoriteHandler = () =>

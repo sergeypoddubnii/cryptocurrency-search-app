@@ -4,6 +4,13 @@ import favCryptoSelectors from '../../redux/favCryptocurrency/favCryptoSelectors
 import FavoriteListItem from '../FavoriteListItem/FavoriteListItem';
 import withTitleList from '../../hoc/withTitleList';
 
+interface cryptoCurrency {
+  id: string;
+  name: string;
+  symbol: any;
+  price: number;
+}
+
 const hocOptions = { title: 'Your favorite cryptoсurrencies:' };
 
 const FavoriteList = () => {
@@ -12,7 +19,7 @@ const FavoriteList = () => {
   );
 
   const cryptocurrenciesList = useMemo(() => {
-    return favCryptocurrencies.map(crypto => {
+    return favCryptocurrencies.map((crypto: cryptoCurrency) => {
       return (
         <FavoriteListItem
           key={crypto.id}

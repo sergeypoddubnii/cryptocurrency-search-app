@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState, FC } from 'react';
 import { useDispatch } from 'react-redux';
 import mainCryptoAction from '../../redux/mainCryptocurrency/mainCryptoActions';
 import styled from 'styled-components';
@@ -30,17 +30,17 @@ const Form = styled.form`
   margin-right: 40px;
 `;
 
-const SearchForm = () => {
+const SearchForm: FC = () => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
-  const handlerSubmit = e => {
+  const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(mainCryptoAction.findCrypto(value.toLowerCase().trim()));
     setValue('');
   };
 
-  const handlerChange = e => {
+  const handlerChange = (e: ChangeEvent<HTMLInputElement>) => {
     return setValue(e.target.value);
   };
 

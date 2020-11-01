@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import favCryptoActions from '../../redux/favCryptocurrency/favCryptoActions';
 import styled from 'styled-components';
@@ -18,8 +18,21 @@ const Button = styled.button`
   border: none;
   outline: none;
 `;
+interface MainListItemTypes {
+  name: string;
+  symbol: any;
+  price: number;
+  id: string;
+  isFavorite: boolean;
+}
 
-const MainListItem = ({ name, symbol, price, id, isFavorite }) => {
+const MainListItem = ({
+  name,
+  symbol,
+  price,
+  id,
+  isFavorite,
+}: MainListItemTypes) => {
   const dispatch = useDispatch();
 
   const addToFavoriteHandler = () => {

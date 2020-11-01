@@ -12,7 +12,13 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const withTitleList = options => Component => props => {
+interface optionsType {
+  title: string;
+}
+
+const withTitleList = (options: optionsType) => <P extends object>(
+  Component: React.ComponentType<P>,
+) => (props: any) => {
   const { title } = options;
   return (
     <Container>

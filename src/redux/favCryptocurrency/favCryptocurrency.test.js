@@ -1,5 +1,5 @@
 import favCryptoActions from './favCryptoActions';
-import favCyptoTypes from './favCyptoTypes';
+import { ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from './favCyptoTypes';
 import favCyptoSelectors from './favCryptoSelectors';
 import favCryptoReducer from './favCryptoReducer';
 
@@ -7,14 +7,14 @@ describe('favCryptocurrency', () => {
   describe('favCryptoActions', () => {
     it('addToFavorite should create correct action', () => {
       expect(favCryptoActions.addToFavorite({ id: 1 })).toEqual({
-        type: favCyptoTypes.ADD_TO_FAVORITE,
+        type: ADD_TO_FAVORITE,
         payload: { crypto: { id: 1 } },
       });
     });
 
     it('removeFromFavorite should create correct action', () => {
       expect(favCryptoActions.removeFromFavorite(1)).toEqual({
-        type: favCyptoTypes.REMOVE_FROM_FAVORITE,
+        type: REMOVE_FROM_FAVORITE,
         payload: { id: 1 },
       });
     });
@@ -32,7 +32,7 @@ describe('favCryptocurrency', () => {
 
     it('favCryptoReducer should return correct state ADD_TO_FAVORITE', () => {
       const action = {
-        type: favCyptoTypes.ADD_TO_FAVORITE,
+        type: ADD_TO_FAVORITE,
         payload: { crypto: { id: 3 } },
       };
       const expectedState = [{ id: 1 }, { id: 2 }, { id: 3 }];
@@ -41,7 +41,7 @@ describe('favCryptocurrency', () => {
 
     it('favCryptoReducer should return correct state REMOVE_FROM_FAVORITE', () => {
       const action = {
-        type: favCyptoTypes.REMOVE_FROM_FAVORITE,
+        type: REMOVE_FROM_FAVORITE,
         payload: { id: 2 },
       };
       const expectedState = [{ id: 1 }];
