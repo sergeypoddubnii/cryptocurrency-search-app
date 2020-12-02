@@ -1,15 +1,16 @@
 interface DataCryptoType {
-  id: string;
+  id: any;
   name: string;
   symbol: any;
   quote: {
     USD: {
-      price: number;
+      price: any;
     };
   };
 }
 
 const mapDataCrypto = (dataCrypto: DataCryptoType[]) => {
+  console.log(dataCrypto);
   return dataCrypto.map((crypto: DataCryptoType) => {
     return {
       id: crypto.id,

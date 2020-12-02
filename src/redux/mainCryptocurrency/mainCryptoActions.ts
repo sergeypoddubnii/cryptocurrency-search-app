@@ -37,11 +37,11 @@ const findCrypto = (value: string): FindCryptoType => {
 };
 
 const sortAscendingPrice = {
-  type: typeof SORT_ASCENDING_PRICE,
+  type: SORT_ASCENDING_PRICE,
 };
 
 const sortDescendingPrice = {
-  type: typeof SORT_DESCENDING_PRICE,
+  type: SORT_DESCENDING_PRICE,
 };
 
 export default {
