@@ -12,7 +12,7 @@ import {
   SORT_DESCENDING_PRICE,
 } from './mainCryptoTypes';
 import mainCryptoSelectors from './mainCryptoSelectors';
-import mainCryptoReducer from './mainCryptoReducer';
+// import mainCryptoReducer from './mainCryptoReducer';
 import mainCryproOperations from './mainCryptoOperations';
 import api from '../../services/api';
 
@@ -52,58 +52,6 @@ describe('mainCryptocurrency', () => {
       expect(mainCryptoSelectors.getAllCryptocurrencies(state)).toBe(1);
     });
   });
-  describe('mainCryproReducer', () => {
-    const initialState = [
-      { id: 1, name: 'hello', symbol: 'h', price: 1 },
-      { id: 3, name: 'hii', symbol: 'yi', price: 3 },
-      { id: 2, name: 'hi', symbol: 'y', price: 2 },
-    ];
-    it('GET_ALL_CRYPTOCURRENCY_SUCCESS should return correct state', () => {
-      const action = {
-        type: GET_ALL_CRYPTOCURRENCY_SUCCESS,
-        payload: { cryptocurrencies: [1, 2, 3] },
-      };
-      expect(mainCryptoReducer([], action)).toEqual([1, 2, 3]);
-    });
-    it('FIND_CRYPTOCURRENCY should return correct state', () => {
-      const action = {
-        type: FIND_CRYPTOCURRENCY,
-        payload: { value: 'hi' },
-      };
-
-      const expectedState = [{ id: 2, name: 'hi', symbol: 'y', price: 2 }];
-
-      expect(mainCryptoReducer(initialState, action)).toEqual(expectedState);
-    });
-
-    it('SORT_ASCENDING_PRICE should return correct state', () => {
-      const action = {
-        type: SORT_ASCENDING_PRICE,
-      };
-
-      const expectedState = [
-        { id: 1, name: 'hello', symbol: 'h', price: 1 },
-        { id: 2, name: 'hi', symbol: 'y', price: 2 },
-        { id: 3, name: 'hii', symbol: 'yi', price: 3 },
-      ];
-
-      expect(mainCryptoReducer(initialState, action)).toEqual(expectedState);
-    });
-    it('SORT_DESCENDING_PRICE should return correct state', () => {
-      const action = {
-        type: SORT_DESCENDING_PRICE,
-      };
-
-      const expectedState = [
-        { id: 3, name: 'hii', symbol: 'yi', price: 3 },
-        { id: 2, name: 'hi', symbol: 'y', price: 2 },
-        { id: 1, name: 'hello', symbol: 'h', price: 1 },
-      ];
-
-      expect(mainCryptoReducer(initialState, action)).toEqual(expectedState);
-    });
-  });
-
   describe('mainCryproOperations', () => {
     it('should getAllCryptoCurrenciesOperation return action for 500', () => {
       mock.onGet(api.urlTest).reply(500);
