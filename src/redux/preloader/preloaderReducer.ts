@@ -2,7 +2,6 @@ import {
   GET_ALL_CRYPTOCURRENCY_START,
   GET_ALL_CRYPTOCURRENCY_SUCCESS,
   GET_ALL_CRYPTOCURRENCY_ERROR,
-  // MainCryptoActionsTypes,
 } from '../mainCryptocurrency/mainCryptoTypes';
 
 const preloaderReducer = {

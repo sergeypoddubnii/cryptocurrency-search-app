@@ -3,7 +3,6 @@ import {
   FIND_CRYPTOCURRENCY,
   SORT_ASCENDING_PRICE,
   SORT_DESCENDING_PRICE,
-  MainCryptoActionsTypes,
   CryptoCurrencyType,
 } from './mainCryptoTypes';
 
