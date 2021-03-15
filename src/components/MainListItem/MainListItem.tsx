@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import favCryptoActions from '../../redux/favCryptocurrency/favCryptoActions';
 import styled from 'styled-components';
