@@ -41,7 +41,7 @@ const SearchForm: FC = () => {
   };
 
   const handlerChange = (e: ChangeEvent<HTMLInputElement>) => {
-    return setValue(e.target.value);
+    setValue(e.target.value);
   };
 
   return (
