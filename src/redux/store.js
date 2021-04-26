@@ -3,12 +3,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { rootReducer } from './rootReducer';
+import { rootReducer } from './rootReducer.ts';
 
 const moviesPersistConfig = {
-  key: 'favCryptocurrencies',
-  storage,
-  whitelist: ['favCryptocurrencies'],
+	key: 'favCryptocurrencies',
+	storage,
+	whitelist: ['favCryptocurrencies'],
 };
 
 const persistedReducer = persistReducer(moviesPersistConfig, rootReducer);

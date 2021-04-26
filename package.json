@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-flow": "^7.12.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.21",
     "@types/node": "^14.14.5",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
@@ -18,12 +22,12 @@
     "@types/styled-components": "^5.1.4",
     "axios": "^0.20.0",
     "axios-mock-adapter": "^1.18.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.21.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
     "gh-pages": "^3.1.0",
     "normalize": "^0.3.1",
     "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.14",
@@ -32,23 +36,23 @@
     "react-toastify": "^6.0.9",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.4",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
+    "ts-jest": "^26.5.4",
     "typescript": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --debug src/ --fix",
+    "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "homepage": "https://sergeypoddubnii.github.io/cryptocurrency-search-app",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -62,11 +66,15 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^3.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^2.5.4",
     "husky": "^4.3.0",
-    "prettier": "2.1.2",
-    "pretty-quick": "^3.0.2",
-    "redux-mock-store": "^1.5.4"
+    "lint-staged": "^10.5.4"
   },
   "resolutions": {
     "styled-components": "^5"

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainListItem should render properly 1`] = `
+<styled.li>
+  <styled.h2>
+     
+  </styled.h2>
+  <div>
+    <span>
+      $
+    </span>
+    <MainListItem />
+  </div>
+</styled.li>
+`;

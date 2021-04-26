@@ -5,7 +5,6 @@ import { combineReducers } from 'redux';
 import createReducer from './createReducer';
 
 const reducers = [mainCryptoReducer, favCryptoReducer, preloaderReducer];
-
 export const rootReducer = combineReducers(
   reducers.reduce(
     (acc, reducer) => ({
