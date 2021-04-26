@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoriteList component FavoriteList render properly 1`] = `
+<styled.div>
+  <styled.h2>
+    Your favorite cryptoсurrencies:
+  </styled.h2>
+  <FavoriteList />
+</styled.div>
+`;

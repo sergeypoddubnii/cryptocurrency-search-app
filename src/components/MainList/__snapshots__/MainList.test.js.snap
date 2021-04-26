@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainList should render correct 1`] = `
+<styled.div>
+  <styled.h2>
+    Top cryptorurrencies:
+  </styled.h2>
+  <MainList />
+</styled.div>
+`;

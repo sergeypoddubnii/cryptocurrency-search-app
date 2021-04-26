@@ -1,7 +1,36 @@
 {
-  "extends": "react-app",
-  "plugins": ["prettier"],
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest"],
+  "extends": ["plugin:react/recommended","plugin:@typescript-eslint/recommended"],
   "rules": {
-    "prettier/prettier": "error"
+    "semi": "error",
+    "no-plusplus": "off",
+    "eol-last": "off",
+    "no-tabs": "off",
+    "no-prototype-builtins": "off",
+    "no-shadow": "off",
+    "indent": [2, "tab"],
+    "max-len": [ "error", 100, {"ignoreUrls": true}],
+    "no-console": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-use-before-define": "off"
   }
 }

@@ -1,9 +1,9 @@
-import React, { ChangeEvent, FormEvent, useState, FC } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import mainCryptoAction from '../../redux/mainCryptocurrency/mainCryptoActions';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import mainCryptoActions from '../../redux/mainCryptocurrency/mainCryptoActions';
 
 const Input = styled.input`
   font-size: 18px;
@@ -30,33 +30,36 @@ const Form = styled.form`
   margin-right: 40px;
 `;
 
-const SearchForm: FC = () => {
-  const [value, setValue] = useState('');
-  const dispatch = useDispatch();
+const SearchForm = () => {
+	const [value, setValue] = useState('');
+	const dispatch = useDispatch();
 
-  const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(mainCryptoAction.findCrypto(value.toLowerCase().trim()));
-    setValue('');
-  };
+	const handlerSubmit = (e) => {
+		e.preventDefault();
+		dispatch(mainCryptoActions.findCrypto(value.toLowerCase().trim()));
+		setValue('');
+	};
 
-  const handlerChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
+	const handlerChange = (e) => {
+		setValue(e.target.value);
+	};
 
-  return (
-    <Form onSubmit={handlerSubmit}>
-      <Input
-        type="text"
-        name="search"
-        value={value}
-        onChange={handlerChange}
-        placeholder="input name or symbol..."
-      />
-      <Button type="submit" disabled={value.length === 0}>
-        <FontAwesomeIcon icon={faSearch} />
-      </Button>
-    </Form>
-  );
+	return (
+		<>
+			<Form onSubmit={handlerSubmit}>
+				<Input
+					type="text"
+					name="search"
+					value={value}
+					onChange={handlerChange}
+					placeholder="input name or symbol..."
+				/>
+				<Button type="submit" disabled={value.length === 0}>
+					<FontAwesomeIcon icon={faSearch} />
+				</Button>
+			</Form>
+		</>
+	);
 };
+
 export default SearchForm;
